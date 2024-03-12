@@ -1,0 +1,20 @@
+kill(all)$
+load("vect")$
+f:[x*y,-x^2,x+z]$
+print("The given vector function is ",f)$
+phi:2*x+2*y+z-6$
+print("The given space is",phi)$
+dphi:[diff(phi,x),diff(phi,y),diff(phi,z)]$
+mag:sqrt(ratsimp(dphi[1]^2+dphi[2]^2+dphi[3]^2 ))$
+n:dphi/mag$
+print("Unit vector n is ",n)$
+fn:f.n$
+print("f.n is",fn)$
+k:[0,0,1]$
+nk:n.k$
+print("n.k is",nk )$
+z1:solve(phi,z)$
+fint:subst(z1,fn)$
+rat:fint/(nk)$
+s1:integrate(integrate(rat,y,0,3-x),x,0,3)$
+print("The surface integral is",s1)$
