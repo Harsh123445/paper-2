@@ -1,0 +1,8 @@
+load("vect")$
+J:[i,j,k]$
+r:[1-1^3, 1+t^2, 2*t-5]$
+rl:diff(r,t)$
+r2:diff(r1,t)$
+print("Space Curve r=", r.J)$
+print("Velocity is v=",r1.J)$
+print("Acceleration is a=",r2.J)$
