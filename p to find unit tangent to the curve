@@ -1,0 +1,9 @@
+load("vect")$
+norm(x):=sqrt(x[1]^2+x[2]^2+x[3]^2)$
+J:[i,j,k]$
+r:[cos(3*t),sin(3*t),4*t]$
+r1:diff(r,t)$
+T:r1.J/norm(r1)$
+print("Space Curve r=", r.J)$
+print("Unit Tangent Vector is T=",expand(trigsimp(T)))$
+print("Unit Tangent Vector at given point is T=",expand(ev(T,t=π/4)))$
