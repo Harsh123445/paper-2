@@ -1,0 +1,10 @@
+load ("vect")$
+J:[i,j,k]$
+Ф:3*x^2*y-y^3*z^2$
+G:ev(express(grad (Φ)), diff)$
+L:ev(express(laplacian (Φ)),diff)$
+print("Φ=", Φ)$
+print("grad(Φ)=", G.J)$
+print("laplacian(Ф)=", L)$
+print("at given point, grad(Φ)=", ev(G,x=1,y=-2,z=-1).J)$
+print("at given point, laplacian(Ф)=", ev(L,x=1,y=-2,z=-1))$
