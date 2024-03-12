@@ -1,0 +1,13 @@
+load("vect")$
+norm(x):=sqrt(x[1]^2+x[2]^2+x[3]^2)$
+dot(x,y):=x.y$
+cross(x,y):=ev(express(x~y),diff)$
+J:[i,j,k]$
+a:[a1, a2, a3] $
+b: [b1, b2, b3] $
+print("vector a=", a.J)$
+print("vector b=", b.J)$
+print("Dot Product a.b=",dot(a,b))$
+print("Cross Product axb=", cross(a,b).J)$
+print("Cross Product bxa=", cross(b,a).J)$
+print("Magnitude of axb=", norm(cross(a,b)))$
