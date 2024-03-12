@@ -1,0 +1,38 @@
+kill(all)$
+load(ntrig)$
+load(draw)$
+print("SPHERE")$
+a:1$
+b:2$
+c:-3$
+print("Ceter of the sphere is" (a,b,c))$
+r:4$
+print("radius of a sphere r=",r)$
+sphr_eqn:ratsimp((x-a)^2+(y-b)^2+(z-c)^2=r^2)$
+print("Equation of the sphere is",sphr_eqn)$
+print("CONE")$
+a:2$
+b:-3$
+c:5$
+ang:%pi/6$
+print("center of the sphere is" (a,b,c))$
+print("semi vertical angle is",ang)$
+cone_eqn:ratsimp((x-a)^2+(y-b)^2=(z-c)^2*(tan(ang))^2)$
+print("Equation of the cone is",cone_eqn)$
+print("CYLINDER")$
+h:2$
+k:3$
+print("center of the cylinder" (h,k))$
+r:2$
+print("radius of the cylinder",r)$
+cyl_eqn:ratsimp((x-h)^2+(y-k)^2=r^2)$
+print("Equation of the cylinder is",cyl_eqn)$
+print("CONSTRUCTION OF SPHERE")$
+draw3d( enhanced3d=true,
+implicit(sphr_eqn,x,-6,6,y,-6,6,z,-6,6));
+print("CONSTRUCTION OF CONE")$
+draw3d( enhanced3d=true,
+implicit(cone_eqn,x,-10,10,y,-10,10,z,-6,6));
+print("CONSTRUCTION OF CYLINDER")$ 
+draw3d( enhanced3d=true,
+implicit(cyl_eqn,x,-8,8,y,-8,8,z,-6,6));
