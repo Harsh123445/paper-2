@@ -1,0 +1,18 @@
+load("vect")$
+norm(x):=sqrt(x[1]^2+x[2]^2+x[3]^2)$
+cross(x,y):=ev(express(x~y),diff)$
+stp(x,y,z):=cross(x,y).z$
+vtp1(x,y,z):=ev(express(cross(x,y)~z),diff)$
+vtp2(x,y,z):=ev(express(x~cross(y,z)),diff)$
+J:[i,j,k]$
+a:[al, a2, a3] $
+b: [b1, b2, b3] $
+c:[cl, c2, c3]$
+print("vector a=", a.J)$
+print("vector b=", b.J)$
+print("vector c=", c.J)$
+print("Scalar triple product [a,b,c]=", stp(a,b,c))$
+print("Vector triple product (axb)xc=", vtpl(a,b,c).J)$
+print("Vector triple product ax(bxc)=", vtp2(a,b,c).J)$
+print("Magnitude of (axb)xc=", norm(vtp1(a,b,c)))$
+print("Magnitude of ax(bxc)=", norm(vtp2(a,b,c)))$
