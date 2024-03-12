@@ -1,0 +1,12 @@
+load ("vect")$
+norm(x):=sqrt(x[1]^2+x[2]^2+x[3]^2)$
+J:[i,j,k]$
+Φ:(x^2*y*z+4*x*z^2)$
+a:[2,-1,-2]$
+G:ev(express(grad (Φ)),diff)$
+DD: G.a/norm(a)$
+print("=", Φ)$
+print("a=", a.J)$
+print("grad()=", G.J)$
+print("Directional Derivative of =", radcan(DD))$
+print("at the given point, Directional Derivative of Φ=",ev(DD,x=1, y=-2,z=-1 ))$
